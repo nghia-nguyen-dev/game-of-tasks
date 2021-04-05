@@ -36,7 +36,7 @@ button:hover {
 	cursor: pointer;
 }
 
-.btn {
+.AddBtn {
 	height: 52px;
 	width: 52px;
 	background-color: var(--bright-yellow);
@@ -44,11 +44,12 @@ button:hover {
 	border-radius: 100%;
 }
 
-.btn:hover {
+.AddBtn:hover {
 	border: 1px solid var(--bright-yellow);
 	background-color: var(--cool-dark);
 }
 
-.btn:hover .add-icon {
+.AddBtn:hover .add-icon {
 	fill: var(--bright-yellow);
 }
+
