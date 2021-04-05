@@ -11,6 +11,12 @@ body {
 	padding: 12px 24px;
 }
 
+.App {
+	display: grid;
+	grid-template-columns: 80% 20%;
+	gap: 25px;
+}
+
 .TaskBar {
 	display: flex;
 	justify-content: space-between;
@@ -27,14 +33,17 @@ body {
 input {
 	border: none;
 	background-color: var(--cool-dark);
-	color: var(--warm-gray);
-	font-size: 72px;
+	height: var(--lg-line-height);
+    font-size: 72px;
 
 	letter-spacing: -2px;
 	font-family: "Forum";
 	text-transform: uppercase;
+    color: wheat;
+}
 
-	height: var(--lg-line-height);
+input::placeholder {
+    opacity: var(--lg-txt-opacity);
 }
 
 button:hover {
@@ -62,11 +71,14 @@ button:hover {
 	fill: var(--bright-yellow);
 }
 
-
-
-
 .Filter--divider {
 	width: 1px;
 	background-color: var(--warm-gray);
 	height: 100%;
+}
+
+.Filter--label {
+	font-size: 72px;
+	color: wheat;
+    opacity: var(--lg-txt-opacity);
 }
