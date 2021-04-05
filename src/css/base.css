@@ -13,11 +13,12 @@ body {
 
 .App {
 	display: grid;
-	grid-template-columns: 80% 20%;
-	gap: 25px;
+	grid-template-columns: 3.7fr 1fr;
+	gap: 50px;
 }
 
 .TaskBar {
+	height: 64px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -34,16 +35,16 @@ input {
 	border: none;
 	background-color: var(--cool-dark);
 	height: var(--lg-line-height);
-    font-size: 72px;
+	font-size: 72px;
 
 	letter-spacing: -2px;
 	font-family: "Forum";
 	text-transform: uppercase;
-    color: wheat;
+	color: wheat;
 }
 
 input::placeholder {
-    opacity: var(--lg-txt-opacity);
+	opacity: var(--lg-txt-opacity);
 }
 
 button:hover {
@@ -71,6 +72,12 @@ button:hover {
 	fill: var(--bright-yellow);
 }
 
+.Filter {
+	padding-left: 25px;
+	border-left: 1px solid #414141;
+	height: 65vh;
+}
+
 .Filter--divider {
 	width: 1px;
 	background-color: var(--warm-gray);
@@ -80,5 +87,36 @@ button:hover {
 .Filter--label {
 	font-size: 72px;
 	color: wheat;
-    opacity: var(--lg-txt-opacity);
+	opacity: var(--lg-txt-opacity);
+}
+
+.Status {
+	margin-top: 48px;
+}
+
+.Actions {
+	margin-top: 16px;
+}
+
+p {
+	font-size: 14px;
+	font-family: Helvetica, Arial, sans-serif;
+	letter-spacing: 0.4px;
+	line-height: 16px;
+	opacity: 0.3;
+	cursor: pointer;
+}
+
+p:hover {
+	opacity: 1;
+}
+
+.Tracker {
+	display: flex;
+	margin-top: 32px;
+}
+
+.Tracker--number {
+	opacity: 1;
+	margin-left: 32px;
 }
