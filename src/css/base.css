@@ -61,3 +61,12 @@ button:hover {
 .AddBtn:hover .add-icon {
 	fill: var(--bright-yellow);
 }
+
+
+
+
+.Filter--divider {
+	width: 1px;
+	background-color: var(--warm-gray);
+	height: 100%;
+}
