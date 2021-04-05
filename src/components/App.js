@@ -1,11 +1,8 @@
-import React from 'react'
+import React from "react";
+import TaskBar from 'components/TaskBar'
 
 const App = () => {
-    return (
-        <div>
-            app
-        </div>
-    )
-}
+	return <div className="App"><TaskBar/></div>;
+};
 
-export default App
+export default App;
