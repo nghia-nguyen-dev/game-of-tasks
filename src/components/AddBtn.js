@@ -3,7 +3,13 @@ import React from "react";
 const AddBtn = () => {
 	return (
 		<button className="AddBtn">
-			<svg width="28px" height="28px" viewBox="0 0 29 29" version="1.1">
+			<svg
+				className="AddBtn--svg"
+				width="28px"
+				height="28px"
+				viewBox="0 0 29 29"
+				version="1.1"
+			>
 				<g
 					id="Page-1"
 					stroke="none"

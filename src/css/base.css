@@ -19,6 +19,11 @@ body {
 	padding-bottom: 8px;
 }
 
+.TaskBar--input {
+	width: 100%;
+	margin-right: 16px;
+}
+
 input {
 	border: none;
 	background-color: var(--cool-dark);
@@ -44,6 +49,10 @@ button:hover {
 	border-radius: 100%;
 }
 
+.AddBtn--svg {
+	margin-top: 2px;
+}
+
 .AddBtn:hover {
 	border: 1px solid var(--bright-yellow);
 	background-color: var(--cool-dark);
@@ -52,4 +61,3 @@ button:hover {
 .AddBtn:hover .add-icon {
 	fill: var(--bright-yellow);
 }
-
