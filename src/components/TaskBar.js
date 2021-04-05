@@ -11,7 +11,6 @@ const TaskBar = () => {
 					viewBox="0 0 29 29"
 					version="1.1"
 				>
-					<title>+</title>
 					<g
 						id="Page-1"
 						stroke="none"
@@ -19,7 +18,7 @@ const TaskBar = () => {
 						fill="none"
 						fill-rule="evenodd"
 					>
-						<g
+						<g className="add-icon"
 							id="TODOS-Copy"
 							transform="translate(-1045.000000, -24.000000)"
 							fill="#1A1E1E"
