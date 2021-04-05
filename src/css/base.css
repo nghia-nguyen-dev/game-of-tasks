@@ -5,9 +5,34 @@ body {
 	font-size: 72px;
 	line-height: 56px;
 	letter-spacing: -2px;
-    font-family: "Forum";
-    text-transform: uppercase;
+	font-family: "Forum";
+	text-transform: uppercase;
 
-    padding: 12px 24px;
+	padding: 12px 24px;
+}
 
+
+
+input {
+    width: 100%;
+	background-color: var(--cool-dark);
+
+	color: var(--warm-gray);
+	font-size: 72px;
+	line-height: 56px;
+	letter-spacing: -2px;
+	font-family: "Forum";
+	text-transform: uppercase;
+
+	border: none;
+	border-bottom: 1px solid #414141;
+
+}
+
+.btn {
+    height: 52px;
+    width: 52px;
+    background-color: var(--bright-yellow);
+    border: none;
+    border-radius: 100%;
 }
