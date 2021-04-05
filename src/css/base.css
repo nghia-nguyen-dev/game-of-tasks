@@ -1,0 +1,13 @@
+body {
+	background-color: var(--cool-dark);
+
+	color: var(--warm-white);
+	font-size: 72px;
+	line-height: 56px;
+	letter-spacing: -2px;
+    font-family: "Forum";
+    text-transform: uppercase;
+
+    padding: 12px 24px;
+
+}
