@@ -1,14 +1,13 @@
 body {
 	background-color: var(--cool-dark);
-
-	color: var(--warm-white);
+	color: wheat;
 	font-size: 72px;
 	line-height: var(--lg-line-height);
 	letter-spacing: -2px;
 	font-family: "Forum";
 	text-transform: uppercase;
-
 	padding: 12px 24px;
+	overflow: hidden;
 }
 
 .App {
@@ -53,7 +52,7 @@ button:hover {
 
 .AddBtn {
 	height: 52px;
-	width: 52px;
+	min-width: 52px;
 	background-color: var(--bright-yellow);
 	border: none;
 	border-radius: 100%;
@@ -119,4 +118,18 @@ p:hover {
 .Tracker--number {
 	opacity: 1;
 	margin-left: 32px;
+}
+
+.Todos {
+	padding-top: 132px;
+	overflow: scroll;
+	height: 91.5vh;
+}
+
+.Todos--item {
+	font-size: 72px;
+	line-height: var(--lg-line-height);
+	letter-spacing: -2px;
+	font-family: "Forum";
+	text-transform: uppercase;
 }
