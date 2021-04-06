@@ -3,10 +3,8 @@ import TaskBar from "components/TaskBar";
 import Filter from "components/Filter";
 import Todos from "components/Todos";
 import TaskContext from "utils/TaskContext";
-import reducer from 'utils/reducer'
-import {initialState} from 'utils/reducer'
-
-
+import reducer from "utils/reducer";
+import { initialState } from "utils/reducer";
 
 const App = () => {
 	const [state, dispatch] = useReducer(reducer, initialState);
