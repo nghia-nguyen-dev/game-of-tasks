@@ -1,11 +1,20 @@
-import React, {useReducer} from "react";
+import React, { useReducer } from "react";
 import TaskBar from "components/TaskBar";
 import Filter from "components/Filter";
 import Todos from "components/Todos";
 import TaskContext from "utils/TaskContext";
 
+const task = {
+	text: "do something",
+	isComplete: false,
+};
+
 const initialState = {
-	tasks: [],
+	show: "all",
+	tasks: {
+		complete: [],
+		todo: [],
+	},
 	isEditOn: false,
 };
 
