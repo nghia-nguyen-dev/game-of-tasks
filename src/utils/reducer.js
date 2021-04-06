@@ -12,7 +12,6 @@ const reducer = (state, action) => {
 				...state,
 				tasks: [...state.tasks, action.payload],
 			};
-
 		default:
 			return state;
 	}

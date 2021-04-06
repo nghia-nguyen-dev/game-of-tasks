@@ -13,7 +13,6 @@ const TaskBar = () => {
 		e.preventDefault();
 		dispatch(addTask(input));
 		setInput("");
-		console.log(state);
 	};
 
 
