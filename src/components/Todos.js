@@ -1,29 +1,10 @@
 import React from "react";
+import Item from "components/Item"
 
 const Todos = () => {
 	return (
 		<div className="Todos">
-			<p className="Todos--item">Todos list</p>
-			<p className="Todos--item">Todos list</p>
-			<p className="Todos--item">Todos list</p>
-			<p className="Todos--item">Todos list</p>
-			<p className="Todos--item">Todos list</p>
-			<p className="Todos--item">Todos list</p>
-			<p className="Todos--item">Todos list</p>
-			<p className="Todos--item">Todos list</p>
-			<p className="Todos--item">Todos list</p>
-			<p className="Todos--item">Todos list</p>
-			<p className="Todos--item">Todos list</p>
-			<p className="Todos--item">Todos list</p>
-			<p className="Todos--item">Todos list</p>
-			<p className="Todos--item">Todos list</p>
-			<p className="Todos--item">Todos list</p>
-			<p className="Todos--item">Todos list</p>
-			<p className="Todos--item">Todos list</p>
-			<p className="Todos--item">Todos list</p>
-			<p className="Todos--item">Todos list</p>
-			<p className="Todos--item">Todos list</p>
-			<p className="Todos--item">Todos list</p>
+			<Item/>
 		</div>
 	);
 };

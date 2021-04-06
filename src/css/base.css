@@ -1,6 +1,6 @@
 body {
 	background-color: var(--cool-dark);
-	color: wheat;
+	color: #ebd19b;
 	font-size: 72px;
 	line-height: var(--lg-line-height);
 	letter-spacing: -2px;
@@ -39,7 +39,7 @@ input {
 	letter-spacing: -2px;
 	font-family: "Forum";
 	text-transform: uppercase;
-	color: wheat;
+	color: var(--warm-white);
 }
 
 input::placeholder {
@@ -85,7 +85,7 @@ button:hover {
 
 .Filter--label {
 	font-size: 72px;
-	color: wheat;
+	color: #ebd19b;
 	opacity: var(--lg-txt-opacity);
 }
 
@@ -126,7 +126,33 @@ p:hover {
 	height: 91.5vh;
 }
 
-.Todos--item {
+.Todos-icons {
+	display: none;
+	width: 86px;
+	justify-content: space-between;
+}
+
+.EditIcon,
+.DeleteIcon {
+	opacity: 0.25;
+}
+
+.EditIcon:hover,
+.DeleteIcon:hover {
+	opacity: 1;
+}
+
+.Item {
+	display: flex;
+	justify-content: space-between;
+	cursor: pointer;
+}
+
+.Item:hover .Todos-icons {
+	display: flex;
+}
+
+.Item--text {
 	font-size: 72px;
 	line-height: var(--lg-line-height);
 	letter-spacing: -2px;
