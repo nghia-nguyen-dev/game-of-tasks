@@ -1,17 +1,34 @@
-import React from "react";
+import React, {useReducer} from "react";
 import TaskBar from "components/TaskBar";
 import Filter from "components/Filter";
-import Todos from 'components/Todos'
+import Todos from "components/Todos";
+import TaskContext from "utils/TaskContext";
+
+const initialState = {
+	tasks: [],
+	isEditOn: false,
+};
+
+const reducer = (state, action) => {
+	switch (action.type) {
+		default:
+			return state;
+	}
+};
 
 const App = () => {
+	const [state, dispatch] = useReducer(reducer, initialState);
+
 	return (
-		<div className="App">
-			<main>
-				<TaskBar />
-                <Todos/>
-			</main>
-			<Filter />
-		</div>
+		<TaskContext.Provider value={{ state, dispatch }}>
+			<div className="App">
+				<main>
+					<TaskBar />
+					<Todos />
+				</main>
+				<Filter />
+			</div>
+		</TaskContext.Provider>
 	);
 };
 
