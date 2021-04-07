@@ -7,13 +7,16 @@ import { toggleTask } from "utils/actions";
 const Item = ({ title, id, isComplete }) => {
 	const { dispatch } = useContext(TaskContext);
 
-	console.log(isComplete)
+	console.log(isComplete);
 
 	const handleClick = () => dispatch(toggleTask(id));
 
 	return (
-		<li className="Item" onClick={handleClick}>
-			<p className="Item--text">{title}</p>
+		<li
+			className="Item"
+			onClick={handleClick}
+		>
+			<p className={`Item--text ${isComplete && "Item--complete"}`}>{title}</p>
 			<div className="Todos-icons">
 				<EditIcon />
 				<DeleteIcon id={id} />
