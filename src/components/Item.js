@@ -1,15 +1,22 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import DeleteIcon from "components/DeleteIcon";
 import EditIcon from "components/EditIcon";
+import TaskContext from "utils/TaskContext";
+import { toggleTask } from "utils/actions";
 
-const Item = ({title, id}) => {
+const Item = ({ title, id, isComplete }) => {
+	const { dispatch } = useContext(TaskContext);
+
+	console.log(isComplete)
+
+	const handleClick = () => dispatch(toggleTask(id));
 
 	return (
-		<li className="Item">
+		<li className="Item" onClick={handleClick}>
 			<p className="Item--text">{title}</p>
 			<div className="Todos-icons">
 				<EditIcon />
-				<DeleteIcon id={id}/>
+				<DeleteIcon id={id} />
 			</div>
 		</li>
 	);
