@@ -27,7 +27,7 @@ const Item = ({ id, title, editTask, isComplete }) => {
 
 	const inputView = (
 		<form onSubmit={handleSubmit}>
-			<input type="text" onChange={handleChange} value={input} className="Item--input"></input>
+			<input type="text" onChange={handleChange} value={input} className="Item--input" placeholder={title}></input>
 		</form>
 	);
 
