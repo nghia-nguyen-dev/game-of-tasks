@@ -7,7 +7,7 @@ const Todos = () => {
 	const renderedTasks = state.tasks.map(task => (
 		<Item key={task.id} {...task} />
 	));
-	console.log(state.tasks)
+	console.log(state)
 	return <ul className="Todos">{renderedTasks}</ul>;
 };
 

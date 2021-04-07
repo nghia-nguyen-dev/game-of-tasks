@@ -2,6 +2,7 @@ import * as actions from "./actions";
 
 export const initialState = {
 	tasks: [],
+	checkAll: false,
 };
 
 const reducer = (state, action) => {
@@ -61,13 +62,19 @@ const reducer = (state, action) => {
 					}
 					return task;
 				}),
-			}
+			};
 
 		case actions.CLEAR_TASKS:
 			return {
 				...state,
-				tasks: []
-			}
+				tasks: [],
+			};
+		case actions.TOGGLE_ALL:
+			return {
+				...state,
+				tasks: tasks.map(task => ({ ...task, isComplete: !state.checkAll })),
+				checkAll: !state.checkAll,
+			};
 
 		default:
 			return state;

@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { clearTasks } from "utils/actions";
+import { clearTasks, crossTasks } from "utils/actions";
 import { remaining } from "utils/helpers";
 import TaskContext from "utils/TaskContext";
 
@@ -11,6 +11,9 @@ const Filter = () => {
 		switch (e.target.textContent) {
 			case "clear":
 				dispatch(clearTasks());
+
+			case "check all":
+				dispatch(crossTasks())
 		}
 	};
 
