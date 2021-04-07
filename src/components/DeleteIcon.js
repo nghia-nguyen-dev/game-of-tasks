@@ -1,8 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
+import { deleteTask } from "utils/actions";
+import TaskContext from "utils/TaskContext";
 
-const DeleteIcon = () => {
+const DeleteIcon = ({ id }) => {
+	const { dispatch } = useContext(TaskContext);
+
+	const handleClick = () => dispatch(deleteTask(id));
+
 	return (
-		<svg className="DeleteIcon" width="33px" height="33px" viewBox="0 0 33 33" version="1.1">
+		<svg
+			onClick={handleClick}
+			className="DeleteIcon"
+			width="33px"
+			height="33px"
+			viewBox="0 0 33 33"
+			version="1.1"
+		>
 			<title>Group 5</title>
 			<g
 				id="Page-1"

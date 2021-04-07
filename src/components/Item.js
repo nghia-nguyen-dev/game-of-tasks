@@ -2,15 +2,16 @@ import React, { useState } from "react";
 import DeleteIcon from "components/DeleteIcon";
 import EditIcon from "components/EditIcon";
 
-const Item = ({task}) => {
+const Item = ({title, id}) => {
+
 	return (
-		<div className="Item">
-			<p className="Item--text">{task}</p>
+		<li className="Item">
+			<p className="Item--text">{title}</p>
 			<div className="Todos-icons">
 				<EditIcon />
-				<DeleteIcon />
+				<DeleteIcon id={id}/>
 			</div>
-		</div>
+		</li>
 	);
 };
 

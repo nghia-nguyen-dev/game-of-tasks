@@ -1,3 +1,5 @@
+import { ADD_TASK, DELETE_TASK } from "./actions";
+
 export const initialState = {
 	tasks: [],
 	show: "all",
@@ -5,15 +7,21 @@ export const initialState = {
 };
 
 const reducer = (state, action) => {
-	const {tasks} = state;
+	const { tasks } = state;
 
 	switch (action.type) {
-		case "ADD_TASK":
-			if (!action.payload.task) return state;
+		case ADD_TASK:
+			if (!action.task.title) return state;
 			return {
 				...state,
-				tasks: [...tasks, action.payload],
+				tasks: [...tasks, action.task],
 			};
+		case DELETE_TASK:
+			return {
+				...state,
+				tasks: tasks.filter(task => task.id !== action.id),
+			};
+
 		default:
 			return state;
 	}
