@@ -13,7 +13,8 @@ const Filter = () => {
 				dispatch(clearTasks());
 
 			case "check all":
-				dispatch(crossTasks())
+			case "uncheck all":
+				dispatch(crossTasks());
 		}
 	};
 
@@ -26,7 +27,7 @@ const Filter = () => {
 				<p>todo</p>
 			</div>
 			<div className="Actions">
-				<p>check all</p>
+				<p>{state.checkAll === true ? "uncheck all" : "check all"}</p>
 				<p>clear</p>
 			</div>
 			<div className="Tracker">
