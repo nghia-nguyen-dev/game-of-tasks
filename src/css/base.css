@@ -25,9 +25,14 @@ body {
 	padding-bottom: 8px;
 }
 
-.TaskBar--input {
+.TaskBar--input,
+form {
 	width: 100%;
 	margin-right: 16px;
+}
+
+.Item--input {
+	width: 100%;
 }
 
 input {
@@ -114,6 +119,7 @@ p {
 .Tracker--number {
 	opacity: 1;
 	margin-left: 32px;
+	color: var(--bright-yellow);
 }
 
 .Todos {
@@ -162,6 +168,6 @@ p {
 
 .Item--complete {
 	text-decoration: line-through;
-	text-decoration-thickness: 1px;
-	text-decoration-color: var(--bright-yellow);
+	text-decoration-thickness: 2px;
+	/* text-decoration-color: var(--bright-yellow); */
 }

@@ -4,11 +4,10 @@ import TaskContext from "utils/TaskContext";
 
 const Todos = () => {
 	const { state } = useContext(TaskContext);
-	console.log(state.tasks)
-	const renderedTasks = state.tasks.map(({ title, id, isComplete }) => (
-		<Item title={title} key={id} id={id} isComplete={isComplete}/>
+	const renderedTasks = state.tasks.map(task => (
+		<Item key={task.id} {...task} />
 	));
-
+	console.log(state.tasks)
 	return <ul className="Todos">{renderedTasks}</ul>;
 };
 

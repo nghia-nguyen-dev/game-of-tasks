@@ -1,25 +1,39 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import DeleteIcon from "components/DeleteIcon";
 import EditIcon from "components/EditIcon";
 import TaskContext from "utils/TaskContext";
-import { toggleTask } from "utils/actions";
+import { toggleTask, updateTask } from "utils/actions";
 
-const Item = ({ title, id, isComplete }) => {
+const Item = ({ id, title, editTask, isComplete }) => {
 	const { dispatch } = useContext(TaskContext);
+	const [input, setInput] = useState("");
 
+	const handleSubmit = e => {
+		e.preventDefault();
+		dispatch(updateTask(input, id));
+		setInput("")
+	};
+	const handleChange = e => setInput(e.target.value);
 	const handleClick = () => dispatch(toggleTask(id));
 
-	// const defaultView = <p className="Item--text">{input}</p>;
-	// const editView = <input type="text" onChange={handleChange}></input>;
+	const defaultView = (
+		<p
+			className={`Item--text ${isComplete && "Item--complete"}`}
+			onClick={handleClick}
+		>
+			{title}
+		</p>
+	);
+
+	const inputView = (
+		<form onSubmit={handleSubmit}>
+			<input type="text" onChange={handleChange} value={input} className="Item--input"></input>
+		</form>
+	);
 
 	return (
 		<li className="Item">
-			<p
-				className={`Item--text ${isComplete && "Item--complete"}`}
-				onClick={handleClick}
-			>
-				{title}
-			</p>
+			{editTask ? inputView : defaultView}
 			<div className="Todos-icons">
 				<EditIcon id={id} />
 				<DeleteIcon id={id} />
@@ -29,24 +43,3 @@ const Item = ({ title, id, isComplete }) => {
 };
 
 export default Item;
-
-// const Item = () => {
-// 	const [editText, setEditText] = useState(false);
-// 	const [input, setInput] = useState("todo list");
-
-// 	const handleClick = () => setEditText(prev => !prev);
-// 	const handleChange = e => setInput(e.target.value);
-
-// 	const defaultView = <p className="Item--text">{input}</p>;
-// 	const editView = <input type="text" onChange={handleChange}></input>;
-
-// 	return (
-// 		<div className="Item" onDoubleClick={handleClick}>
-// 			{!editText ? defaultView : editView}
-// 			<div className="Todos-icons">
-// 				<EditIcon />
-// 				<DeleteIcon />
-// 			</div>
-// 		</div>
-// 	);
-// };

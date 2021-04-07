@@ -1,4 +1,4 @@
-import { ADD_TASK, TOGGLE_TASK, DELETE_TASK, EDIT_TASK } from "./actions";
+import * as actions from "./actions";
 
 export const initialState = {
 	tasks: [],
@@ -9,19 +9,19 @@ const reducer = (state, action) => {
 	const { tasks } = state;
 
 	switch (action.type) {
-		case ADD_TASK:
+		case actions.ADD_TASK:
 			if (!action.task.title) return state;
 			return {
 				...state,
 				tasks: [...tasks, action.task],
 			};
-		case DELETE_TASK:
+		case actions.DELETE_TASK:
 			return {
 				...state,
 				tasks: tasks.filter(task => task.id !== action.id),
 			};
 
-		case TOGGLE_TASK:
+		case actions.TOGGLE_TASK:
 			return {
 				...state,
 				tasks: tasks.map(task => {
@@ -35,7 +35,7 @@ const reducer = (state, action) => {
 				}),
 			};
 
-		case EDIT_TASK:
+		case actions.EDIT_TASK:
 			return {
 				...state,
 				tasks: tasks.map(task => {
@@ -48,6 +48,21 @@ const reducer = (state, action) => {
 					return task;
 				}),
 			};
+
+		case actions.UPDATE_TASK:
+			return {
+				...state,
+				tasks: tasks.map(task => {
+					if (task.id === action.id) {
+						return {
+							...task,
+							title: action.input,
+							editTask: false,
+						};
+					}
+					return task;
+				}),
+			}
 
 		default:
 			return state;

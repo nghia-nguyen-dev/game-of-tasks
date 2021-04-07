@@ -5,7 +5,7 @@ import TaskContext from "utils/TaskContext";
 const EditIcon = ({ id }) => {
 	const { dispatch } = useContext(TaskContext);
 
-	const handleClick = id => dispatch(editTask(id));
+	const handleClick = () => dispatch(editTask(id));
 
 	return (
 		<svg
