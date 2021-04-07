@@ -22,7 +22,7 @@ const TaskBar = () => {
 			<input
 				value={input}
 				onChange={handleChange}
-				className="TaskBar--input"
+				className="TaskBar__input"
 				type="text"
 				placeholder="Add Task"
 			></input>

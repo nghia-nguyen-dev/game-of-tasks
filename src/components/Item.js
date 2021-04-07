@@ -23,7 +23,7 @@ const Item = ({ id, title, editTask, isComplete }) => {
 
 	const defaultView = (
 		<p
-			className={`Item--text ${isComplete && "Item--complete"}`}
+			className={`Item__text ${isComplete && "Item__complete"}`}
 			onClick={handleClick}
 		>
 			{title}
@@ -37,7 +37,7 @@ const Item = ({ id, title, editTask, isComplete }) => {
 				type="text"
 				onChange={handleChange}
 				value={input}
-				className="Item--input"
+				className="Item__input"
 				placeholder={title}
 			></input>
 		</form>

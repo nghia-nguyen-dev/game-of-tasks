@@ -4,7 +4,7 @@ const AddBtn = () => {
 	return (
 		<button className="AddBtn">
 			<svg
-				className="AddBtn--svg"
+				className="AddBtn__svg"
 				width="28px"
 				height="28px"
 				viewBox="0 0 29 29"
