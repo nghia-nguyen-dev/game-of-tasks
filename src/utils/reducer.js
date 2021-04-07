@@ -1,9 +1,8 @@
-import { ADD_TASK, TOGGLE_TASK, DELETE_TASK } from "./actions";
+import { ADD_TASK, TOGGLE_TASK, DELETE_TASK, EDIT_TASK } from "./actions";
 
 export const initialState = {
 	tasks: [],
-	show: "all",
-	isEditOn: false,
+	editTask: "",
 };
 
 const reducer = (state, action) => {
@@ -26,13 +25,27 @@ const reducer = (state, action) => {
 			return {
 				...state,
 				tasks: tasks.map(task => {
-					if (task.id === action.id ) {
+					if (task.id === action.id) {
 						return {
 							...task,
-							isComplete: !task.isComplete
-						}
+							isComplete: !task.isComplete,
+						};
 					}
-					return task
+					return task;
+				}),
+			};
+
+		case EDIT_TASK:
+			return {
+				...state,
+				tasks: tasks.map(task => {
+					if (task.id === action.id) {
+						return {
+							...task,
+							editTask: true,
+						};
+					}
+					return task;
 				}),
 			};
 

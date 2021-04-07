@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
+import { editTask } from "utils/actions";
+import TaskContext from "utils/TaskContext";
 
-const EditIcon = () => {
+const EditIcon = ({ id }) => {
+	const { dispatch } = useContext(TaskContext);
+
+	const handleClick = id => dispatch(editTask(id));
+
 	return (
 		<svg
+			onClick={handleClick}
 			className="EditIcon"
 			width="33px"
 			height="33px"
