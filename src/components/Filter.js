@@ -1,9 +1,8 @@
 import React, { useContext } from "react";
 import { clearTasks, crossTasks } from "utils/actions";
-import { remaining } from "utils/helpers";
 import TaskContext from "utils/TaskContext";
-import * as options from "utils/options"
-
+import * as options from "utils/options";
+import Tracker from 'components/Tracker'
 
 const Filter = () => {
 	const { state, dispatch } = useContext(TaskContext);
@@ -29,13 +28,14 @@ const Filter = () => {
 				<p>{options.TODO}</p>
 			</div>
 			<div className="Actions">
-				<p>{state.checkAll === true ? options.UNCHECK_ALL : options.CHECK_ALL}</p>
+				<p>
+					{state.checkAll === true
+						? options.UNCHECK_ALL
+						: options.CHECK_ALL}
+				</p>
 				<p>{options.CLEAR}</p>
 			</div>
-			<div className="Tracker">
-				<p>remaining</p>
-				<p className="Tracker__number">{remaining(state)}</p>
-			</div>
+			<Tracker />
 		</div>
 	);
 };

@@ -1,8 +1,10 @@
 import * as actions from "./actions";
+import * as options from 'utils/options'
 
 export const initialState = {
 	tasks: [],
 	checkAll: false,
+	show: options.ALL
 };
 
 const reducer = (state, action) => {
