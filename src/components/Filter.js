@@ -4,6 +4,7 @@ import TaskContext from "utils/TaskContext";
 import * as options from "utils/options";
 import Tracker from "components/Tracker";
 import FilterOptions from "components/FilterOptions";
+import Actions from "components/Actions";
 
 const Filter = () => {
 	const { state, dispatch } = useContext(TaskContext);
@@ -23,14 +24,7 @@ const Filter = () => {
 		<div className="Filter" onClick={handleClick}>
 			<h2 className="Filter__label">Filter</h2>
 			<FilterOptions />
-			<div className="Actions">
-				<p>
-					{state.checkAll === true
-						? options.UNCHECK_ALL
-						: options.CHECK_ALL}
-				</p>
-				<p>{options.CLEAR}</p>
-			</div>
+			<Actions />
 			<Tracker />
 		</div>
 	);
