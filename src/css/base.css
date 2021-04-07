@@ -105,9 +105,23 @@ p {
 	cursor: pointer;
 }
 
+.Status p:hover,
+.Actions p:hover {
+	opacity: 1;
+}
+
+.Status p.active,
+.Actions p.active {
+	opacity: 1;
+}
+
 .Tracker {
 	display: flex;
 	margin-top: 32px;
+}
+
+.Tracker p {
+	cursor: initial;
 }
 
 .Tracker__number {
