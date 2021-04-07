@@ -2,10 +2,10 @@ import React, { useContext } from "react";
 import { editTask } from "utils/actions";
 import TaskContext from "utils/TaskContext";
 
-const EditIcon = ({ id }) => {
+const EditIcon = ({ id, isComplete }) => {
 	const { dispatch } = useContext(TaskContext);
 
-	const handleClick = () => dispatch(editTask(id));
+	const handleClick = () => !isComplete && dispatch(editTask(id));
 
 	return (
 		<svg

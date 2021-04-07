@@ -35,7 +35,7 @@ const Item = ({ id, title, editTask, isComplete }) => {
 		<li className="Item">
 			{editTask ? inputView : defaultView}
 			<div className="Todos-icons">
-				<EditIcon id={id} />
+				<EditIcon id={id} isComplete={isComplete}/>
 				<DeleteIcon id={id} />
 			</div>
 		</li>
