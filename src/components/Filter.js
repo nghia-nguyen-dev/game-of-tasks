@@ -1,11 +1,21 @@
 import React, { useContext } from "react";
+import { clearTasks } from "utils/actions";
 import { remaining } from "utils/helpers";
 import TaskContext from "utils/TaskContext";
 
 const Filter = () => {
-	const { state } = useContext(TaskContext);
+	const { state, dispatch } = useContext(TaskContext);
+
+	const handleClick = e => {
+		console.log(e.target.textContent);
+		switch (e.target.textContent) {
+			case "clear":
+				dispatch(clearTasks());
+		}
+	};
+
 	return (
-		<div className="Filter">
+		<div className="Filter" onClick={handleClick}>
 			<h2 className="Filter__label">Filter</h2>
 			<div className="Status">
 				<p>all</p>
@@ -13,11 +23,11 @@ const Filter = () => {
 				<p>todo</p>
 			</div>
 			<div className="Actions">
-				<p>Check all</p>
-				<p>Clear</p>
+				<p>check all</p>
+				<p>clear</p>
 			</div>
 			<div className="Tracker">
-				<p>Remaining</p>
+				<p>remaining</p>
 				<p className="Tracker__number">{remaining(state)}</p>
 			</div>
 		</div>

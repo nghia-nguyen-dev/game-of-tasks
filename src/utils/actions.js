@@ -6,6 +6,7 @@ export const DELETE_TASK = "DELETE_TASK";
 export const TOGGLE_TASK = "TOGGLE_TASK";
 export const EDIT_TASK = "EDIT_TASK";
 export const UPDATE_TASK = "UPDATE_TASK";
+export const CLEAR_TASKS = "CLEAR_TASKS";
 
 // ACTION CREATORS
 export const addTask = input => ({
@@ -38,3 +39,5 @@ export const updateTask = (input, id) => {
 		id,
 	};
 };
+
+export const clearTasks = () => ({ type: CLEAR_TASKS });

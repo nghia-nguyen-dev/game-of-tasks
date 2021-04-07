@@ -103,6 +103,8 @@ p {
 	line-height: 16px;
 	opacity: 0.3;
 	cursor: pointer;
+	
+	width: max-content;
 }
 
 .Status p:hover,
@@ -176,6 +178,6 @@ p {
 
 .Item__complete {
 	text-decoration: line-through;
-	text-decoration-thickness: 2px;
+	text-decoration-thickness: 1px;
 	/* text-decoration-color: var(--bright-yellow); */
 }

@@ -2,7 +2,6 @@ import * as actions from "./actions";
 
 export const initialState = {
 	tasks: [],
-	editTask: "",
 };
 
 const reducer = (state, action) => {
@@ -62,6 +61,12 @@ const reducer = (state, action) => {
 					}
 					return task;
 				}),
+			}
+
+		case actions.CLEAR_TASKS:
+			return {
+				...state,
+				tasks: []
 			}
 
 		default:
