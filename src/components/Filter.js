@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { clearTasks, crossTasks } from "utils/actions";
+import { clearTasks, crossTasks, updateFilter } from "utils/actions";
 import TaskContext from "utils/TaskContext";
 import * as options from "utils/options";
 import Tracker from "components/Tracker";
@@ -10,6 +10,8 @@ const Filter = () => {
 	const { state, dispatch } = useContext(TaskContext);
 
 	const handleClick = e => {
+		
+
 		switch (e.target.textContent) {
 			case options.CLEAR:
 				dispatch(clearTasks());
@@ -17,6 +19,14 @@ const Filter = () => {
 			case options.CHECK_ALL:
 			case options.UNCHECK_ALL:
 				dispatch(crossTasks());
+
+			case options.ALL:
+			case options.COMPLETE:
+			case options.TODO:
+				dispatch(updateFilter(e.target.textContent));
+
+			default:
+				return;
 		}
 	};
 

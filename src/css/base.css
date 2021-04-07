@@ -92,6 +92,10 @@ button:hover {
 	margin-top: 48px;
 }
 
+.Status--active {
+	opacity: 1;
+}
+
 .Actions {
 	margin-top: 16px;
 }
@@ -103,7 +107,7 @@ p {
 	line-height: 16px;
 	opacity: 0.3;
 	cursor: pointer;
-	
+
 	width: max-content;
 }
 

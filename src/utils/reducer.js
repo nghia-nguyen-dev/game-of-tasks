@@ -81,6 +81,12 @@ const reducer = (state, action) => {
 				checkAll: !state.checkAll,
 			};
 
+		case actions.UPDATE_FILTER:
+			return {
+				...state,
+				show: action.filter
+			}
+
 		default:
 			return state;
 	}

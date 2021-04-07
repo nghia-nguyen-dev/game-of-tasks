@@ -8,6 +8,7 @@ export const EDIT_TASK = "EDIT_TASK";
 export const UPDATE_TASK = "UPDATE_TASK";
 export const CLEAR_TASKS = "CLEAR_TASKS";
 export const TOGGLE_ALL = "TOGGLE_ALL";
+export const UPDATE_FILTER = "UPDATE_FILTER";
 
 // ACTION CREATORS
 export const addTask = input => ({
@@ -43,3 +44,7 @@ export const updateTask = (input, id) => {
 
 export const clearTasks = () => ({ type: CLEAR_TASKS });
 export const crossTasks = () => ({ type: TOGGLE_ALL });
+export const updateFilter = textContent => ({
+	type: UPDATE_FILTER,
+	filter: textContent,
+});
