@@ -72,7 +72,10 @@ const reducer = (state, action) => {
 		case actions.TOGGLE_ALL:
 			return {
 				...state,
-				tasks: tasks.map(task => ({ ...task, isComplete: !state.checkAll })),
+				tasks: tasks.map(task => ({
+					...task,
+					isComplete: !state.checkAll,
+				})),
 				checkAll: !state.checkAll,
 			};
 
