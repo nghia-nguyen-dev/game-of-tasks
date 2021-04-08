@@ -13,18 +13,21 @@ const Filter = () => {
 		switch (e.target.textContent) {
 			case options.CLEAR:
 				dispatch(clearTasks());
+				break;
 
 			case options.CHECK_ALL:
 			case options.UNCHECK_ALL:
 				dispatch(crossTasks());
+				break;
 
 			case options.ALL:
 			case options.COMPLETE:
 			case options.TODO:
 				dispatch(updateFilter(e.target.textContent));
+				break;
 
 			default:
-				return;
+				break;
 		}
 	};
 
