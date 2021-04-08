@@ -16,7 +16,7 @@ const Item = ({ id, title, editTask, isComplete }) => {
 		}
 
 		return () => document.removeEventListener("click", handleSubmit);
-	}, [editTask, input]);
+	}, [editTask, input]); // IMPORTANT!!! must include input into dependency list, else useEffect will not get re-rendered resulting to input being unchanged from its initial value of ""
 
 	const handleSubmit = e => {
 		e.preventDefault();
