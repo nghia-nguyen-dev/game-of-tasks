@@ -4,7 +4,7 @@ import TaskContext from "utils/TaskContext";
 import { addTask } from "utils/actions";
 
 const TaskBar = () => {
-	const { state, dispatch } = useContext(TaskContext);
+	const { dispatch } = useContext(TaskContext);
 	const [input, setInput] = useState("");
 
 	const handleChange = e => setInput(e.target.value);
@@ -14,8 +14,6 @@ const TaskBar = () => {
 		dispatch(addTask(input));
 		setInput("");
 	};
-
-
 
 	return (
 		<form className="TaskBar" onSubmit={handleSubmit}>
