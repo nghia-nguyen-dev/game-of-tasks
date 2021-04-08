@@ -2,7 +2,7 @@
 
 Not really a game, more like a GOT themed todos/task list
 
-[**VIEW DEMO**](https://flamboyant-lovelace-be214d.netlify.app/)
+[**VIEW DEMO**](https://competent-wing-1b1e70.netlify.app/)
 
 ## Features
 
