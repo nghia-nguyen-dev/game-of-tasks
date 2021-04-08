@@ -7,17 +7,16 @@ const Todos = () => {
 	const { state } = useContext(TaskContext);
 
 	const renderedTasks = () => {
-		const { tasks, show, isComplete } = state;
-
+		const { tasks, show } = state;
 		switch (show) {
 			case COMPLETE:
 				return tasks
-					.filter(task => isComplete && task)
+					.filter(task => task.isComplete && task)
 					.map(task => <Item key={task.id} {...task} />);
 
 			case TODO:
 				return tasks
-					.filter(task => !isComplete && task)
+					.filter(task => !task.isComplete && task)
 					.map(task => <Item key={task.id} {...task} />);
 
 			default:
@@ -25,7 +24,6 @@ const Todos = () => {
 		}
 	};
 
-	console.log(state)
 	return <ul className="Todos">{renderedTasks()}</ul>;
 };
 
