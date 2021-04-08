@@ -3,6 +3,10 @@ import Item from "components/Item";
 import TaskContext from "utils/TaskContext";
 import { COMPLETE, TODO } from "utils/options";
 
+const createItem = task => <Item key={task.id} {...task} />;
+const isComplete = task => task.isComplete && task;
+const isntComplete = task => !task.isComplete && task;
+
 const Todos = () => {
 	const { state } = useContext(TaskContext);
 
@@ -10,17 +14,13 @@ const Todos = () => {
 		const { tasks, show } = state;
 		switch (show) {
 			case COMPLETE:
-				return tasks
-					.filter(task => task.isComplete && task)
-					.map(task => <Item key={task.id} {...task} />);
+				return tasks.filter(isComplete).map(createItem);
 
 			case TODO:
-				return tasks
-					.filter(task => !task.isComplete && task)
-					.map(task => <Item key={task.id} {...task} />);
+				return tasks.filter(isntComplete).map(createItem);
 
 			default:
-				return tasks.map(task => <Item key={task.id} {...task} />);
+				return tasks.map(createItem);
 		}
 	};
 
