@@ -1,10 +1,14 @@
 import * as actions from "./actions";
-import * as options from 'utils/options'
+import * as options from "utils/options";
 
 export const initialState = {
 	tasks: [],
 	checkAll: false,
-	show: options.ALL
+	show: options.ALL,
+	edit: {
+		isOn: false,
+		task: "",
+	},
 };
 
 const reducer = (state, action) => {
@@ -49,6 +53,10 @@ const reducer = (state, action) => {
 					}
 					return task;
 				}),
+				edit: {
+					...state.edit,
+					isOn: true,
+				}
 			};
 
 		case actions.UPDATE_TASK:
@@ -84,8 +92,8 @@ const reducer = (state, action) => {
 		case actions.UPDATE_FILTER:
 			return {
 				...state,
-				show: action.filter
-			}
+				show: action.filter,
+			};
 
 		default:
 			return state;

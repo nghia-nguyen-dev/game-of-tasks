@@ -9,14 +9,25 @@ const Item = ({ id, title, editTask, isComplete }) => {
 	const [input, setInput] = useState("");
 	const inputRef = useRef();
 
+	const clickToUpdateTask = () => {
+		dispatch(updateTask(input, id));
+		setInput("");
+	}
+
 	useEffect(() => {
 		editTask && inputRef.current.focus();
-	}, [editTask]);
+		
+		if (editTask) {
+			document.addEventListener('click', clickToUpdateTask)
+		}
+
+		return () => document.removeEventListener("click", clickToUpdateTask)
+	
+	}, [editTask, input]);
 
 	const handleSubmit = e => {
 		e.preventDefault();
-		dispatch(updateTask(input, id));
-		setInput("");
+		clickToUpdateTask()
 	};
 	const handleChange = e => setInput(e.target.value);
 	const handleClick = () => dispatch(toggleTask(id));
