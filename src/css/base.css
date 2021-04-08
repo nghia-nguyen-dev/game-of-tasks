@@ -79,7 +79,7 @@ button:hover {
 .Filter {
 	padding-left: 25px;
 	border-left: 1px solid #414141;
-	height: 65vh;
+	height: 60vh;
 }
 
 .Filter__label {
@@ -103,11 +103,11 @@ button:hover {
 p {
 	font-size: 14px;
 	font-family: Helvetica, Arial, sans-serif;
-	letter-spacing: 0.4px;
-	line-height: 16px;
-	opacity: 0.3;
+	font-weight: var(--sm-txt-weight);
+	letter-spacing: 0.5px;
+	line-height: 17px;
+	opacity: var(--sm-txt-opacity);
 	cursor: pointer;
-
 	width: max-content;
 }
 

@@ -7,11 +7,9 @@ import FilterOptions from "components/FilterOptions";
 import Actions from "components/Actions";
 
 const Filter = () => {
-	const { state, dispatch } = useContext(TaskContext);
+	const { dispatch } = useContext(TaskContext);
 
 	const handleClick = e => {
-		
-
 		switch (e.target.textContent) {
 			case options.CLEAR:
 				dispatch(clearTasks());
