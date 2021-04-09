@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext } from "react";
 import DeleteIcon from "components/DeleteIcon";
 import EditIcon from "components/EditIcon";
 import TaskContext from "utils/TaskContext";

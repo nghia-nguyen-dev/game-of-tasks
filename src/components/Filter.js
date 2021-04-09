@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { clearTasks, toggleAll, updateFilter } from "utils/actions";
 import TaskContext from "utils/TaskContext";
 import * as options from "utils/options";
-import Tracker from "components/Tracker";
 import FilterOptions from "components/FilterOptions";
 import Actions from "components/Actions";
 
@@ -36,7 +35,6 @@ const Filter = () => {
 			<h2 className="Filter__label">Filter</h2>
 			<FilterOptions />
 			<Actions />
-			{/* <Tracker /> */}
 		</div>
 	);
 };
