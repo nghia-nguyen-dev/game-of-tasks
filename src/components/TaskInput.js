@@ -7,12 +7,13 @@ const TaskInput = ({ title, id }) => {
 	const [input, setInput] = useState("");
 
 	useEffect(() => {
-		document.addEventListener("click", handleSubmit);
-		return () => document.removeEventListener("click", handleSubmit);
+		document.addEventListener("click", handleSubmit, true);
+		return () => document.removeEventListener("click", handleSubmit, true);
 	}, [input]);
-
+    
 	const handleSubmit = e => {
 		e.preventDefault();
+		e.stopPropagation();
 		dispatch(updateTask(input, id));
 		setInput("");
 	};
