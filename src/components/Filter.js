@@ -36,7 +36,7 @@ const Filter = () => {
 			<h2 className="Filter__label">Filter</h2>
 			<FilterOptions />
 			<Actions />
-			<Tracker />
+			{/* <Tracker /> */}
 		</div>
 	);
 };

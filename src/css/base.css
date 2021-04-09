@@ -102,6 +102,20 @@ button:hover {
 	justify-content: space-between;
 }
 
+.Option__label--active {
+	opacity: 1;
+}
+
+.Option__counter {
+	color: var(--bright-yellow);
+	display: none;
+}
+
+.Option__counter--active {
+	opacity: 1;
+	display: block;
+}
+
 .Actions {
 	margin-top: 16px;
 }

@@ -13,7 +13,6 @@ export const initialState = {
 
 const reducer = (state, action) => {
 	const { tasks, edit } = state;
-	console.log(action)
 
 	switch (action.type) {
 		case actions.ADD_TASK:

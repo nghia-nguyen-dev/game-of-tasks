@@ -11,13 +11,12 @@ const FilterOptions = () => {
 		return 1;
 	};
 
-	const isActive = option =>
-		state.show === option ? "Option--active" : null;
+	const isActive = option => state.show === option ? "active" : null;
 
 	const renderedOptions = options.map(option => (
-		<li className={`Option ${isActive(option)}`} key={option}>
-			<p className="Option__label">{option}</p>
-			<p className="Option__counter">{getCount()}</p>
+		<li className={`Option`} key={option}>
+			<p className={`Option__label Option__label--${isActive(option)}`}>{option}</p>
+			<p className={`Option__counter Option__counter--${isActive(option)}`}>{getCount()}</p>
 		</li>
 	));
 
