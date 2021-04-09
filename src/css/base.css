@@ -88,12 +88,18 @@ button:hover {
 	opacity: var(--lg-txt-opacity);
 }
 
-.Status {
+.FilterOptions {
 	margin-top: 48px;
+	width: 45%;
 }
 
-.Status--active {
+.Option--active {
 	opacity: 1;
+}
+
+.Option {
+	display: flex;
+	justify-content: space-between;
 }
 
 .Actions {
@@ -111,12 +117,12 @@ p {
 	width: max-content;
 }
 
-.Status p:hover,
+.FilterOptions p:hover,
 .Actions p:hover {
 	opacity: 1;
 }
 
-.Status p.active,
+.FilterOptions p.active,
 .Actions p.active {
 	opacity: 1;
 }
