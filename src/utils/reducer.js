@@ -1,7 +1,9 @@
 import * as actions from "./actions";
 import * as options from "utils/options";
 
-export const initialState = {
+// console.log(JSON.parse(localStorage.state));
+
+export const initialState = JSON.parse(localStorage.state) || {
 	tasks: [],
 	checkAll: false,
 	show: options.ALL,
