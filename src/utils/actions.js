@@ -21,5 +21,8 @@ export const toggleTask = id => ({ type: TOGGLE_TASK, id });
 export const editTask = id => ({ type: EDIT_TASK, id });
 export const updateTask = input => ({ type: UPDATE_TASK, input });
 export const clearTasks = () => ({ type: CLEAR_TASKS });
-export const crossTasks = () => ({ type: TOGGLE_ALL });
-export const updateFilter = textContent => ({ type: UPDATE_FILTER, filter: textContent })
+export const toggleAll = () => ({ type: TOGGLE_ALL });
+export const updateFilter = textContent => ({
+	type: UPDATE_FILTER,
+	filter: textContent,
+});

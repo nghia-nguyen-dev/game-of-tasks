@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { clearTasks, crossTasks, updateFilter } from "utils/actions";
+import { clearTasks, toggleAll, updateFilter } from "utils/actions";
 import TaskContext from "utils/TaskContext";
 import * as options from "utils/options";
 import Tracker from "components/Tracker";
@@ -17,7 +17,7 @@ const Filter = () => {
 
 			case options.CHECK_ALL:
 			case options.UNCHECK_ALL:
-				dispatch(crossTasks());
+				dispatch(toggleAll());
 				break;
 
 			case options.ALL:
