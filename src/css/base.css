@@ -14,6 +14,9 @@ body {
 	display: grid;
 	grid-template-columns: 3.7fr 1fr;
 	gap: 50px;
+
+	max-width: 1660px;
+	margin: 0 auto;
 }
 
 .TaskBar {
@@ -205,3 +208,9 @@ p:hover {
 	text-decoration-thickness: 1px;
 	/* text-decoration-color: var(--bright-yellow); */
 }
+
+/* @media (min-width: 1600px) {
+	body {
+		padding-top: 143px;
+	}
+} */
