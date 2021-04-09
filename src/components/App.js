@@ -8,7 +8,7 @@ import { initialState } from "utils/reducer";
 
 const App = () => {
 	const [state, dispatch] = useReducer(reducer, initialState);
-	console.log(state)
+	console.log(state);
 	return (
 		<TaskContext.Provider value={{ state, dispatch }}>
 			<div className="App">

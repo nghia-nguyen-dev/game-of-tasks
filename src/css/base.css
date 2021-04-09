@@ -1,6 +1,6 @@
 body {
 	background-color: var(--cool-dark);
-	color: #ebd19b;
+	color: var(--base-txt-color);
 	font-size: 72px;
 	line-height: var(--lg-line-height);
 	letter-spacing: -2px;
@@ -48,7 +48,8 @@ input {
 }
 
 input::placeholder {
-	opacity: var(--lg-txt-opacity);
+	color: var(--base-txt-color);
+	opacity: 1;
 }
 
 button:hover {
@@ -79,18 +80,16 @@ button:hover {
 .Filter {
 	padding-left: 25px;
 	border-left: 1px solid #414141;
-	height: 60vh;
+	height: 70vh;
 }
 
 .Filter__label {
 	font-size: 72px;
-	color: #ebd19b;
-	opacity: var(--lg-txt-opacity);
 }
 
 .FilterOptions {
 	margin-top: 48px;
-	width: 45%;
+	width: 85%;
 }
 
 .Option--active {
@@ -126,14 +125,12 @@ p {
 	font-weight: var(--sm-txt-weight);
 	letter-spacing: 0.5px;
 	line-height: 17px;
-	opacity: var(--sm-txt-opacity);
 	cursor: pointer;
 	width: max-content;
 }
 
-.FilterOptions p:hover,
-.Actions p:hover {
-	opacity: 1;
+p:hover {
+	color: var(--warm-white);
 }
 
 .FilterOptions p.active,
@@ -157,7 +154,7 @@ p {
 }
 
 .Todos {
-	padding-top: 132px;
+	padding-top: 168px;
 	overflow: scroll;
 	height: 91.5vh;
 }
@@ -177,16 +174,16 @@ p {
 .EditIcon:hover,
 .DeleteIcon:hover {
 	opacity: 1;
+	cursor: pointer;
 }
 
 .Item {
 	display: flex;
 	justify-content: space-between;
-	cursor: pointer;
 }
 
 .Item:hover .Item__text {
-	opacity: 1;
+	color: var(--warm-white);
 }
 
 .Item:hover .Todos-icons {
@@ -199,7 +196,7 @@ p {
 	letter-spacing: -2px;
 	font-family: "Forum";
 	text-transform: uppercase;
-	width: 100%;
+	width: max-content;
 	line-break: anywhere;
 }
 
