@@ -9,6 +9,8 @@ import { initialState } from "utils/reducer";
 const App = () => {
 	const [state, dispatch] = useReducer(reducer, initialState);
 	console.log(state);
+	localStorage.state = JSON.stringify(state)
+
 	return (
 		<TaskContext.Provider value={{ state, dispatch }}>
 			<div className="App">
