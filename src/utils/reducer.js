@@ -1,17 +1,17 @@
 import * as actions from "./actions";
 import * as options from "utils/options";
 
-console.log(JSON.parse(localStorage.state))
-
-export const initialState = {
-	tasks: [],
-	checkAll: false,
-	show: options.ALL,
-	edit: {
-		isOn: false,
-		id: "",
-	},
-};
+export const initialState = localStorage.state
+	? JSON.parse(localStorage.state)
+	: {
+			tasks: [],
+			checkAll: false,
+			show: options.ALL,
+			edit: {
+				isOn: false,
+				id: "",
+			},
+	  };
 
 const reducer = (state, action) => {
 	const { tasks, edit } = state;
