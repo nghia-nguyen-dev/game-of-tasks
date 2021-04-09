@@ -14,8 +14,6 @@ export const initialState = {
 const reducer = (state, action) => {
 	const { tasks, edit } = state;
 	console.log(action)
-	// GUARD futher actions until task item has been updated
-	// if (state.edit.isOn && action.type !== actions.UPDATE_TASK) return state;
 
 	switch (action.type) {
 		case actions.ADD_TASK:

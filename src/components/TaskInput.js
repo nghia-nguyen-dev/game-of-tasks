@@ -13,7 +13,7 @@ const TaskInput = ({ title, id }) => {
     
 	const handleSubmit = e => {
 		e.preventDefault();
-		e.stopPropagation();
+		e.stopPropagation(); // Combined with capture phase, this prevents other events from triggering
 		dispatch(updateTask(input, id));
 		setInput("");
 	};
