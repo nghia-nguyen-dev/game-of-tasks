@@ -6,8 +6,8 @@ const TaskInput = ({ title, id }) => {
 	const { dispatch } = useContext(TaskContext);
 	const [input, setInput] = useState("");
 
-    const memoizedHandleSubmit = useCallback(
-		(e) => {
+	const memoizedHandleSubmit = useCallback(
+		e => {
 			e.preventDefault();
 			e.stopPropagation(); // Combined with capture phase, this prevents other events from triggering
 			dispatch(updateTask(input, id));
@@ -18,10 +18,9 @@ const TaskInput = ({ title, id }) => {
 
 	useEffect(() => {
 		document.addEventListener("click", memoizedHandleSubmit, true);
-		return () => document.removeEventListener("click", memoizedHandleSubmit, true);
+		return () =>
+			document.removeEventListener("click", memoizedHandleSubmit, true);
 	}, [input, memoizedHandleSubmit]);
-
-
 
 	const handleSubmit = e => {
 		e.preventDefault();

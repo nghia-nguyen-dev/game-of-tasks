@@ -52,6 +52,16 @@ const reducer = (state, action) => {
 			};
 
 		case actions.UPDATE_TASK:
+			if (action.input === "") {
+				return {
+					...state,
+					edit: {
+						isOn: false,
+						id: "",
+					},
+				};
+			}
+
 			return {
 				...state,
 				tasks: tasks.map(task => {
