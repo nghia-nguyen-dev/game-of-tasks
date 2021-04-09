@@ -7,12 +7,15 @@ export const initialState = {
 	show: options.ALL,
 	edit: {
 		isOn: false,
-		task: "",
+		id: "",
 	},
 };
 
 const reducer = (state, action) => {
-	const { tasks } = state;
+	const { tasks, edit } = state;
+
+	// GUARD futher actions until task item has been updated
+	if (state.edit.isOn && action.type !== actions.UPDATE_TASK) return state;
 
 	switch (action.type) {
 		case actions.ADD_TASK:
@@ -21,6 +24,7 @@ const reducer = (state, action) => {
 				...state,
 				tasks: [...tasks, action.task],
 			};
+
 		case actions.DELETE_TASK:
 			return {
 				...state,
@@ -44,34 +48,28 @@ const reducer = (state, action) => {
 		case actions.EDIT_TASK:
 			return {
 				...state,
-				tasks: tasks.map(task => {
-					if (task.id === action.id) {
-						return {
-							...task,
-							editTask: true,
-						};
-					}
-					return task;
-				}),
 				edit: {
-					...state.edit,
 					isOn: true,
-				}
+					id: action.id,
+				},
 			};
 
 		case actions.UPDATE_TASK:
 			return {
 				...state,
 				tasks: tasks.map(task => {
-					if (task.id === action.id) {
+					if (task.id === edit.id) {
 						return {
 							...task,
 							title: action.input,
-							editTask: false,
 						};
 					}
 					return task;
 				}),
+				edit: {
+					isOn: false,
+					id: "",
+				},
 			};
 
 		case actions.CLEAR_TASKS:
@@ -79,6 +77,7 @@ const reducer = (state, action) => {
 				...state,
 				tasks: [],
 			};
+
 		case actions.TOGGLE_ALL:
 			return {
 				...state,

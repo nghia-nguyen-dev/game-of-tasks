@@ -13,38 +13,13 @@ export const UPDATE_FILTER = "UPDATE_FILTER";
 // ACTION CREATORS
 export const addTask = input => ({
 	type: ADD_TASK,
-	task: { id: nanoid(), title: input, isComplete: false, editTask: false },
+	task: { id: nanoid(), title: input, isComplete: false },
 });
 
-export const deleteTask = id => {
-	return { type: DELETE_TASK, id };
-};
-
-export const toggleTask = id => {
-	return {
-		type: TOGGLE_TASK,
-		id,
-	};
-};
-
-export const editTask = id => {
-	return {
-		type: EDIT_TASK,
-		id,
-	};
-};
-
-export const updateTask = (input, id) => {
-	return {
-		type: UPDATE_TASK,
-		input,
-		id,
-	};
-};
-
+export const deleteTask = id => ({ type: DELETE_TASK, id });
+export const toggleTask = id => ({ type: TOGGLE_TASK, id });
+export const editTask = id => ({ type: EDIT_TASK, id });
+export const updateTask = input => ({ type: UPDATE_TASK, input });
 export const clearTasks = () => ({ type: CLEAR_TASKS });
 export const crossTasks = () => ({ type: TOGGLE_ALL });
-export const updateFilter = textContent => ({
-	type: UPDATE_FILTER,
-	filter: textContent,
-});
+export const updateFilter = textContent => ({ type: UPDATE_FILTER, filter: textContent })
