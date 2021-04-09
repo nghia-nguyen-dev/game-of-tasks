@@ -2,7 +2,9 @@ import React, { useContext, useState, useEffect } from "react";
 import DeleteIcon from "components/DeleteIcon";
 import EditIcon from "components/EditIcon";
 import TaskContext from "utils/TaskContext";
-import { toggleTask, updateTask } from "utils/actions";
+import { updateTask } from "utils/actions";
+import TaskDefault from "components/TaskDefault";
+import TaskInput from "components/TaskInput";
 
 const Item = ({ id, title, isComplete }) => {
 	const { state, dispatch } = useContext(TaskContext);
@@ -21,36 +23,21 @@ const Item = ({ id, title, isComplete }) => {
 		setInput("");
 	};
 
-	const handleChange = e => setInput(e.target.value);
-	const handleClick = () => dispatch(toggleTask(id));
-
-	const defaultView = (
-		<p
-			className={`Item__text ${isComplete && "Item__complete"}`}
-			onClick={handleClick}
-		>
-			{title}
-		</p>
-	);
-
-	const inputView = (
-		<form onSubmit={handleSubmit}>
-			<input
-				autoFocus
-				type="text"
-				onChange={handleChange}
-				value={input}
-				className="Item__input"
-				placeholder={title}
-			></input>
-		</form>
-	);
+	const taskView =
+		state.edit.id === id && state.edit.isOn ? (
+			<TaskInput
+				handleSubmit={handleSubmit}
+				input={input}
+				setInput={setInput}
+				title={title}
+			/>
+		) : (
+			<TaskDefault id={id} isComplete={isComplete} title={title} />
+		);
 
 	return (
 		<li className="Item">
-			{state.edit.id === id && state.edit.isOn
-				? inputView
-				: defaultView}
+			{taskView}
 			<div className="Todos-icons">
 				<EditIcon id={id} isComplete={isComplete} />
 				<DeleteIcon id={id} />
