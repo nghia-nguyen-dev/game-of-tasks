@@ -166,6 +166,7 @@ p {
 	display: none;
 	width: 86px;
 	justify-content: space-between;
+	margin-left: 16px;
 }
 
 .EditIcon,
@@ -199,6 +200,7 @@ p {
 	font-family: "Forum";
 	text-transform: uppercase;
 	width: 100%;
+	line-break: anywhere;
 }
 
 .Item__complete {
