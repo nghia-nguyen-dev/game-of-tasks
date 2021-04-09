@@ -3,18 +3,17 @@ import TaskContext from "utils/TaskContext";
 import { updateTask } from "utils/actions";
 
 const TaskInput = ({ title, id }) => {
-	const { state, dispatch } = useContext(TaskContext);
+	const { dispatch } = useContext(TaskContext);
 	const [input, setInput] = useState("");
 
 	useEffect(() => {
-		if (state.edit.isOn) {
-			document.addEventListener("click", handleSubmit);
-			return () => document.removeEventListener("click", handleSubmit);
-		}
+		document.addEventListener("click", handleSubmit, true);
+		return () => document.removeEventListener("click", handleSubmit, true);
 	}, [input]);
-
+    
 	const handleSubmit = e => {
 		e.preventDefault();
+		e.stopPropagation(); // Combined with capture phase, this prevents other events from triggering
 		dispatch(updateTask(input, id));
 		setInput("");
 	};
