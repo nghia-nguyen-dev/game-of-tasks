@@ -5,6 +5,7 @@ import Todos from "components/Todos";
 import TaskContext from "utils/TaskContext";
 import reducer from "utils/reducer";
 import { initialState } from "utils/reducer";
+import FloorFade from "components/FloorFade"
 
 const App = () => {
 	const [state, dispatch] = useReducer(reducer, initialState);
@@ -20,6 +21,7 @@ const App = () => {
 				</main>
 				<Filter />
 			</div>
+			<FloorFade/>
 		</TaskContext.Provider>
 	);
 };
