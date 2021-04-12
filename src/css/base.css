@@ -10,15 +10,6 @@ body {
 	overflow: hidden;
 }
 
-.App {
-	display: grid;
-	grid-template-columns: 3.7fr 1fr;
-	gap: 50px;
-
-	max-width: 1660px;
-	margin: 0 auto;
-}
-
 .TaskBar {
 	height: 64px;
 	display: flex;
